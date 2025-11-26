@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন তারুলতা 🌸</title>
+    
+    <!-- Google Fonts - Bengali Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           GLOBAL STYLES & RESET
+        ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette - Soft Lavender & Rose Theme */
+            --primary-lavender: #E6D5F5;
+            --secondary-rose: #FFE5EC;
+            --accent-pink: #FFC2D4;
+            --cream: #FFF8F3;
+            --text-dark: #4A4A4A;
+            --text-light: #6B6B6B;
+            --gold-accent: #D4AF37;
+            
+            /* Fonts */
+            --font-primary: 'Hind Siliguri', sans-serif;
+            --font-serif: 'Noto Serif Bengali', serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--primary-lavender) 50%, var(--secondary-rose) 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================
+           PARALLAX BACKGROUND
+        ============================================ */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--primary-lavender) 50%, var(--secondary-rose) 100%);
+            background-size: 200% 200%;
+        }
+
+        /* ============================================
+           FLOATING HEARTS ANIMATION
+        ============================================ */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--accent-pink);
+            opacity: 0.6;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================
+           HERO SECTION WITH PARTICLE NAME
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Particle Name Canvas */
+        #nameCanvas {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, #D946A6, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .subtitle {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            min-width: 100px;
+        }
+
+        .countdown-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D946A6;
+            display: block;
+        }
+
+        .countdown-item .label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 3;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--text-light);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* ============================================
+           SECTION STYLES
+        ============================================ */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #9333EA;
+            position: relative;
+            padding-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-title.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--gold-accent));
+            border-radius: 2px;
+        }
+
+        /* ============================================
+           BIRTHDAY CAKE SECTION
+        ============================================ */
+        .cake-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cake-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .cake {
+            font-size: 8rem;
+            animation: cakeFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes cakeFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .candles {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        .candle {
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .candle.blown {
+            animation: blowOut 0.5s forwards;
+        }
+
+        @keyframes blowOut {
+            to {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.5);
+            }
+        }
+
+        .cake-instruction {
+            margin-top: 2rem;
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .wish-message {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #D946A6;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .wish-message.show {
+            opacity: 1;
+        }
+
+        /* ============================================
+           GIFT UNWRAPPING SECTION
+        ============================================ */
+        .gift-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gift-box {
+            font-size: 10rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .gift-box:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .gift-box.opening {
+            animation: unwrap 1s forwards;
+        }
+
+        @keyframes unwrap {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.5) rotate(180deg); opacity: 0.5; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+
+        .gift-message {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-lavender), var(--secondary-rose));
+            border-radius: 15px;
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--text-dark);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+        }
+
+        .gift-message.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ============================================
+           BALLOON POP GAME
+        ============================================ */
+        .balloon-game {
+            min-height: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloon-container {
+            position: relative;
+            height: 400px;
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: balloonFloat 4s ease-in-out infinite;
+        }
+
+        .balloon:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes balloonFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .balloon.popped {
+            animation: pop 0.3s forwards;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .balloon-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            z-index: 10;
+        }
+
+        .balloon-message.show {
+            opacity: 1;
+        }
+
+        .balloon-counter {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #D946A6;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           FORTUNE COOKIE SECTION
+        ============================================ */
+        .fortune-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .fortune-cookie {
+            font-size: 8rem;
+            margin: 2rem 0;
+            animation: cookieSpin 3s linear infinite;
+        }
+
+        @keyframes cookieSpin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .fortune-button {
+            background: linear-gradient(135deg, #D946A6, #9333EA);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-family: var(--font-primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(217, 70, 166, 0.4);
+        }
+
+        .fortune-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 70, 166, 0.6);
+        }
+
+        .fortune-message {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--cream), var(--primary-lavender));
+            border-radius: 15px;
+            border-left: 5px solid var(--gold-accent);
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--text-dark);
+            font-style: italic;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ============================================
+           AGE CALCULATOR SECTION
+        ============================================ */
+        .age-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .age-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .age-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .age-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .age-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #D946A6;
+            margin: 0.5rem 0;
+        }
+
+        .age-card .label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           EASTER EGGS
+        ============================================ */
+        .easter-egg {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .easter-egg:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .easter-egg-tooltip {
+            position: fixed;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-dark);
+            z-index: 101;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            max-width: 250px;
+        }
+
+        .easter-egg-tooltip.show {
+            opacity: 1;
+        }
+
+        /* ============================================
+           MESSAGE BOX & OTHER SECTIONS
+        ============================================ */
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1s ease-out;
+            border: 2px solid var(--accent-pink);
+        }
+
+        .message-box p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            line-height: 2;
+            color: var(--text-dark);
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        /* ============================================
+           REASONS SECTION
+        ============================================ */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reason-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-pink);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reason-card.reveal {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .reason-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .reason-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: #D946A6;
+            margin-bottom: 1rem;
+        }
+
+        .reason-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* ============================================
+           MEMORY TIMELINE
+        ============================================ */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            border: 2px solid var(--primary-lavender);
+        }
+
+        .timeline-date {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #9333EA;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: var(--secondary-rose);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+        }
+
+        .timeline-content {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--text-dark);
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        /* ============================================
+           PHOTO GALLERY
+        ============================================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary-lavender), var(--secondary-rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-placeholder {
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* ============================================
+           MUSIC PLAYER
+        ============================================ */
+        .music-player {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .music-player h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: #D946A6;
+            margin-bottom: 1.5rem;
+        }
+
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        footer .signature {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+        ============================================ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                padding: 1rem 1.5rem;
+                min-width: 80px;
+            }
+
+            .countdown-item .number {
+                font-size: 2rem;
+            }
+
+            .message-box, .gift-container, .cake-container, .fortune-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .cake {
+                font-size: 5rem;
+            }
+
+            .gift-box {
+                font-size: 6rem;
+            }
+
+            .balloon {
+                font-size: 3rem;
+            }
+
+            .reason-card {
+                padding: 1.5rem;
+            }
+
+            .timeline-item {
+                padding: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .age-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .balloon-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg" id="parallaxBg"></div>
+
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Easter Eggs (Hidden Secrets) -->
+    <div class="easter-egg" id="egg1" style="top: 20%; right: 5%;">🌟</div>
+    <div class="easter-egg" id="egg2" style="bottom: 30%; left: 5%;">💫</div>
+    <div class="easter-egg" id="egg3" style="top: 50%; right: 10%;">✨</div>
+    <div class="easter-egg" id="egg4" style="bottom: 20%; right: 15%;">🌸</div>
+    <div class="easter-egg" id="egg5" style="top: 70%; left: 10%;">💝</div>
+    <div class="easter-egg-tooltip" id="eggTooltip"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <canvas id="nameCanvas"></canvas>
+        <div class="hero-content">
+            <h1>শুভ জন্মদিন, তারুলতা! 🌸</h1>
+            <p class="subtitle">তারিফা হক মজুমদার</p>
+            
+            <!-- Countdown Timer -->
+            <div id="countdown" class="countdown">
+                <div class="countdown-item">
+                    <span class="number" id="days">00</span>
+                    <span class="label">দিন</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">ঘণ্টা</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">মিনিট</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">সেকেন্ড</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- BIRTHDAY CAKE SECTION -->
+    <section id="cake">
+        <div class="container">
+            <h2 class="section-title">একটি ইচ্ছা করুন 🎂</h2>
+            <div class="cake-container">
+                <div class="cake-wrapper" id="cakeWrapper">
+                    <div class="candles" id="candles">
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                        <span class="candle">🕯️</span>
+                    </div>
+                    <div class="cake">🎂</div>
+                </div>
+                <p class="cake-instruction">কেকের উপর ক্লিক করে মোমবাতি নিভিয়ে একটি ইচ্ছা করুন ✨</p>
+                <p class="wish-message" id="wishMessage">🎉 শুভ কামনা! আপনার সব স্বপ্ন পূরণ হোক! 🎉</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIFT UNWRAPPING SECTION -->
+    <section id="gift">
+        <div class="container">
+            <h2 class="section-title">আপনার জন্য একটি উপহার 🎁</h2>
+            <div class="gift-container">
+                <div class="gift-box" id="giftBox">🎁</div>
+                <p style="margin-top: 1rem; font-size: 1.2rem; color: var(--text-light);">উপহারটি খুলতে ক্লিক করুন</p>
+                <div class="gift-message" id="giftMessage">
+                    এই উপহারগুলো কেবল আমার অনুভূতির সামান্য বহিঃপ্রকাশ মাত্র। পৃথিবীর সব দামী উপহারের সৌন্দর্য ম্লান হয়ে যায় আপনার ওই স্নিগ্ধ হাসির কাছে। আপনি হাসলেই আমার পৃথিবী আলোকিত থাকে।
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIRTHDAY MESSAGE SECTION -->
+    <section id="message">
+        <div class="container">
+            <h2 class="section-title">আপনার জন্য</h2>
+            <div class="message-box">
+                <p>শুভ জন্মদিন, তারুলতা! ক্যালেন্ডারের পাতায় দিনটা হয়তো সবার মতোই সাধারণ, কিন্তু আমার কাছে দিনটা অনেক বিশেষ। দীর্ঘ ৫ বছর ধরে আপনাকে চিনেছি, জেনেছি। সময়ের সাথে অনেক কিছু বদলালেও, আপনার প্রতি আমার শ্রদ্ধা আর ভালোলাগা একবিন্দুও কমেনি। আপনি আছেন—এটাই আমার জন্য আনন্দের। আপনার নতুন বছরটা আনন্দে ভরে উঠুক।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BALLOON POP GAME -->
+    <section id="balloons">
+        <div class="container">
+            <h2 class="section-title">বেলুন ফাটিয়ে সারপ্রাইজ দেখুন 🎈</h2>
+            <div class="balloon-game">
+                <div class="balloon-container" id="balloonContainer">
+                    <!-- Balloons will be generated by JS -->
+                </div>
+                <div class="balloon-message" id="balloonMessage"></div>
+                <div class="balloon-counter">বাকি বেলুন: <span id="balloonCount">10</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REASONS I LOVE YOU SECTION -->
+    <section id="reasons">
+        <div class="container">
+            <h2 class="section-title">আপনাকে ভালোবাসার দশটি কারণ</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="number">০১</div>
+                    <h3>আপনার অনাড়ম্বর সরলতা</h3>
+                    <p>"এই কৃত্রিমতার শহরে আপনার ওই অকৃত্রিম সরলতা আমাকে বারবার প্রেমে ফেলে। আপনি জানেন না, কোনো সাজসজ্জা ছাড়াই আপনার ওই সাদামাটা উপস্থিতি আমার কাছে কতটা রাজকীয়।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০২</div>
+                    <h3>আপনার স্নিগ্ধ হাসি</h3>
+                    <p>"আপনার ঠোঁটের কোণে লেগে থাকা ওই একচিলতে হাসি—যা আমার সমস্ত ক্লান্তি আর অবসাদ নিমিষেই ভুলিয়ে দেয়। মনে হয়, পৃথিবীর সব আলো যেন ওই হাসিতে এসে মিশেছে।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৩</div>
+                    <h3>চোখের গভীরতা</h3>
+                    <p>"আপনার চোখে তাকানো মানে এক অতল সাগরে ডুব দেওয়া। সেই চোখের ভাষায় এমন কিছু মায়া আছে, যা আমাকে গত ৫ বছর ধরে আটকে রেখেছে, আমি চাইলেও সেখান থেকে ফিরতে পারি না।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৪</div>
+                    <h3>আপনার নির্লিপ্ততা</h3>
+                    <p>"আপনি নিজের মতো করে থাকতে ভালোবাসেন, কারো মনোযোগ কাড়ার চেষ্টা করেন না। আপনার এই উদাসীনতা আর নিজের জগতে মগ্ন থাকার ভঙ্গিটা আমাকে ভীষণ টানে।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৫</div>
+                    <h3>আমার অনুপ্রেরণা হওয়ার শক্তি</h3>
+                    <p>"আপনি হয়তো জানেন না, কিন্তু আপনি আছেন বলেই আমি নিজেকে ছাড়িয়ে যাওয়ার স্বপ্ন দেখি। আপনাকে যোগ্য সম্মান দেওয়ার জন্যই আমি নিজেকে প্রতিদিন একটু একটু করে গড়ে তুলি।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৬</div>
+                    <h3>আপনার কণ্ঠের মায়া</h3>
+                    <p>"মাঝে মাঝে ভিড়ের মাঝে আপনার গলার স্বর শুনে থমকে যাই। আপনার কথাগুলো আমার কানে কোনো সাধারণ শব্দ নয়, যেন প্রিয় কোনো কবিতার মতো বাজে।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৭</div>
+                    <h3>আপনাকে পুরোপুরি না চেনার রহস্য</h3>
+                    <p>"আপনাকে এত বছর ধরে চিনি, তবুও মনে হয় চেনা বাকি। এই যে আপনাকে রোজ একটু একটু করে নতুনভাবে আবিষ্কার করা—এই রহস্যটাই আমাকে আপনার প্রতি আসক্ত করে রেখেছে।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৮</div>
+                    <h3>আপনার দৃঢ় ব্যক্তিত্ব</h3>
+                    <p>"আপনার কোমল চেহারার আড়ালে যে এক দৃঢ় ব্যক্তিত্ব লুকিয়ে আছে, তা আমি শ্রদ্ধা করি। আপনি জানেন কোথায় থামতে হয়, আর কোথায় নিজের সম্মান বজায় রাখতে হয়।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">০৯</div>
+                    <h3>নিঃস্বার্থ হওয়ার শিক্ষা</h3>
+                    <p>"আপনাকে ভালোবাসার সবচেয়ে বড় কারণ হলো—আপনি আমাকে শিখিয়েছেন কীভাবে কিছু না চেয়েও ভালোবাসা যায়। আপনাকে না পাওয়ার হাহাকার থেকেও যে একধরণের প্রশান্তি পাওয়া যায়, তা আমি আপনাকেই ভালোবেসে জেনেছি।"</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="number">১০</div>
+                    <h3>আপনি 'আপনি' বলেই</h3>
+                    <p>"সবশেষে, কোনো নির্দিষ্ট কারণ ছাড়াই আমি আপনাকে ভালোবাসি। আকাশের যেমন কোনো কারণ লাগে না মেঘ ধারণ করার জন্য, আপনাকে ভালোবাসার জন্যও আমার কোনো যুক্তির প্রয়োজন নেই। আপনি যেমন, ঠিক তেমন বলেই আপনি আমার প্রিয়।"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORTUNE COOKIE SECTION -->
+    <section id="fortune">
+        <div class="container">
+            <h2 class="section-title">বার্তা 🥠</h2>
+            <div class="fortune-container">
+                <div class="fortune-cookie">🥠</div>
+                <button class="fortune-button" id="fortuneBtn">আরও একটি ভালোবাসার বার্তা দেখুন</button>
+                <div class="fortune-message" id="fortuneMessage">
+                    "ভালোবাসা মানে কাউকে নিজের করে পাওয়া নয়, বরং তাকে তার মতো করে ভালো থাকতে দেখা।"
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGE CALCULATOR SECTION -->
+    <section id="age">
+        <div class="container">
+            <h2 class="section-title">আপনার জীবনের হিসাব 📊</h2>
+            <div class="age-stats">
+                <div class="age-card">
+                    <div class="icon">🎂</div>
+                    <div class="number" id="ageYears">21</div>
+                    <div class="label">বছর</div>
+                </div>
+                <div class="age-card">
+                    <div class="icon">📅</div>
+                    <div class="number" id="ageDays">0</div>
+                    <div class="label">দিন বেঁচে আছেন</div>
+                </div>
+                <div class="age-card">
+                    <div class="icon">⏰</div>
+                    <div class="number" id="ageHours">0</div>
+                    <div class="label">ঘণ্টা</div>
+                </div>
+                <div class="age-card">
+                    <div class="icon">⏱️</div>
+                    <div class="number" id="ageMinutes">0</div>
+                    <div class="label">মিনিট</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL MEMORY TIMELINE -->
+    <section id="memory">
+        <div class="container">
+            <h2 class="section-title">প্রথম দেখার স্মৃতি</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <!-- <div class="timeline-date">৫ বছর আগে 🌧️</div> -->
+                    <p class="timeline-content">সেই প্রথম আপনার পাশাপাশি হাঁটার মুহূর্তটি আমার কাছে এক অনন্ত যাত্রার মতো মনে হয়েছিল। বৃষ্টির দিনে যখন আপনি পরম মমতায় ঝরে পড়া ফুলগুলো কুড়িয়ে নিচ্ছিলেন, তখন আপনার ওই নিষ্পাপ মুখশ্রীর দিকে তাকিয়ে আমি বাকরুদ্ধ হয়েছিলাম। বৃষ্টির ফোঁটা আর আপনার সেই মায়াবী হাসি একাকার হয়ে গিয়েছিল, আর তার সাথে ছিল আপনার চোখের কোণে জমে থাকা সেই বিনীত লজ্জা। সেই অল্প সময়ের স্মৃতিটুকু আমার হৃদয়ের মণিকোঠায় এক পবিত্র আমানত হয়ে আছে, যা আমি আজীবন আগলে রাখব।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">স্মৃতির গ্যালারি 📸</h2>
+            <div class="gallery-grid">
+                <!-- PHOTO PLACEHOLDERS -->
+                <div class="gallery-item">
+                     <img src="images/p1.png" alt="Memory 1">
+                </div>
+                <div class="gallery-item">
+                     <img src="images/p2.png" alt="Memory 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/p3.png" alt="Memory 1">
+                </div>
+                <div class="gallery-item"> 
+                   <img src="images/p4.png" alt="Memory 1">
+                </div>
+                <!-- <div class="gallery-item">
+                    <div class="gallery-placeholder">📷<br>Photo 5<br>(পরে যোগ করুন)</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">📷<br>Photo 6<br>(পরে যোগ করুন)</div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIC PLAYER -->
+    <section id="music">
+        <div class="container">
+            <h2 class="section-title">আপনার জন্য একটি গান 🎵</h2>
+            <div class="music-player">
+                <h3>বাজতে দিন এই সুর...</h3>
+                <div class="youtube-embed">
+                    <iframe 
+                        src="https://www.youtube.com/embed/vhVBWw6rId0?autoplay=0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>আপনার নতুন বছরটি সুখময় হোক 🌸</p>
+        <p class="signature">— আপনার একজন নীরব শুভাকাঙ্ক্ষী (সামির)</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================
+        // COUNTDOWN TIMER
+        // ============================================
+        function updateCountdown() {
+            const birthday = new Date('December 1, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = birthday - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<h2 style="color: #D946A6; font-size: 2rem;">🎉 শুভ জন্মদিন! 🎉</h2>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // ============================================
+        // AGE CALCULATOR (Born: 2004)
+        // ============================================
+        function calculateAge() {
+            const birthDate = new Date('2004-12-01');
+            const now = new Date();
+            
+            // Years
+            let years = now.getFullYear() - birthDate.getFullYear();
+            const monthDiff = now.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < birthDate.getDate())) {
+                years--;
+            }
+            
+            // Days
+            const timeDiff = now - birthDate;
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            
+            // Hours
+            const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            
+            // Minutes
+            const minutes = Math.floor(timeDiff / (1000 * 60));
+            
+            document.getElementById('ageYears').textContent = years;
+            document.getElementById('ageDays').textContent = days.toLocaleString('bn-BD');
+            document.getElementById('ageHours').textContent = hours.toLocaleString('bn-BD');
+            document.getElementById('ageMinutes').textContent = minutes.toLocaleString('bn-BD');
+        }
+
+        calculateAge();
+        setInterval(calculateAge, 60000); // Update every minute
+
+        // ============================================
+        // PARALLAX SCROLLING EFFECT
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.getElementById('parallaxBg');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // ============================================
+        // NAME PARTICLE ANIMATION (Canvas)
+        // ============================================
+        const canvas = document.getElementById('nameCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = 200;
+
+        const particles = [];
+        const text = 'তারুলতা';
+        
+        ctx.font = 'bold 80px "Noto Serif Bengali"';
+        ctx.fillStyle = '#D946A6';
+        ctx.textAlign = 'center';
+        ctx.fillText(text, canvas.width / 2, 100);
+
+        const textData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let y = 0; y < textData.height; y += 4) {
+            for (let x = 0; x < textData.width; x += 4) {
+                const index = (y * textData.width + x) * 4;
+                const alpha = textData.data[index + 3];
+                
+                if (alpha > 128) {
+                    particles.push({
+                        x: x,
+                        y: y,
+                        originX: x,
+                        originY: y,
+                        vx: (Math.random() - 0.5) * 2,
+                        vy: (Math.random() - 0.5) * 2
+                    });
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                ctx.fillStyle = '#D946A6';
+                ctx.fillRect(p.x, p.y, 2, 2);
+                
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                p.vx += (p.originX - p.x) * 0.01;
+                p.vy += (p.originY - p.y) * 0.01;
+                
+                p.vx *= 0.95;
+                p.vy *= 0.95;
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        // ============================================
+        // FLOATING HEARTS
+        // ============================================
+        function createHeart() {
+            const heartsContainer = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 25000);
+        }
+
+        setInterval(createHeart, 3000);
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 600);
+        }
+
+        // ============================================
+        // BIRTHDAY CAKE INTERACTION
+        // ============================================
+        const cakeWrapper = document.getElementById('cakeWrapper');
+        const candles = document.querySelectorAll('.candle');
+        const wishMessage = document.getElementById('wishMessage');
+        let candlesBlown = 0;
+
+        cakeWrapper.addEventListener('click', () => {
+            candles.forEach((candle, index) => {
+                setTimeout(() => {
+                    candle.classList.add('blown');
+                    candlesBlown++;
+                    
+                    if (candlesBlown === candles.length) {
+                        setTimeout(() => {
+                            wishMessage.classList.add('show');
+                        }, 500);
+                    }
+                }, index * 200);
+            });
+        });
+
+        // ============================================
+        // GIFT UNWRAPPING
+        // ============================================
+        const giftBox = document.getElementById('giftBox');
+        const giftMessage = document.getElementById('giftMessage');
+        let giftOpened = false;
+
+        giftBox.addEventListener('click', () => {
+            if (!giftOpened) {
+                giftBox.classList.add('opening');
+                setTimeout(() => {
+                    giftMessage.classList.add('show');
+                    giftOpened = true;
+                }, 1000);
+            }
+        });
+
+        // ============================================
+        // BALLOON POP GAME
+        // ============================================
+        const balloonMessages = [
+            "আপনার হাসিতেই আমার পুরো দিনের ক্লান্তি দূর হয়ে যায়।",
+            "আপনি জানেন না, কিন্তু আপনিই আমার প্রতিদিনের এগিয়ে যাওয়ার অনুপ্রেরণা।",
+            "আপনার ওই সরলতা আপনাকে হাজারো মানুষের ভিড়ে অনন্য করেছে।",
+            "আপনার চোখের ভাষায় যে মায়া আছে, তা কোনো কবিতার চেয়ে কম নয়।",
+            "আপনি আছেন, ঠিক এভাবেই—এটাই আমার মনের প্রশান্তি।",
+            "মাঝে মাঝে আপনাকে একঝলক দেখলেই মনটা ভালো হয়ে যায়।",
+            "নিজের খেয়াল রাখবেন, কারণ আপনি আমার কাছে খুব স্পেশাল।",
+            "আপনার কণ্ঠস্বর শোনাটা আমার দিনের সবচেয়ে প্রিয় মুহূর্ত।",
+            "সবুজের মাঝে আপনাকে দেখলে মনে হয় প্রকৃতিও আপনাকে বরণ করছে।",
+            "আমার সবটুকু প্রার্থনা কেবল আপনার ভালো থাকার জন্য।"
+        ];
+
+        const balloonContainer = document.getElementById('balloonContainer');
+        const balloonMessageDiv = document.getElementById('balloonMessage');
+        const balloonCountDiv = document.getElementById('balloonCount');
+        const balloonColors = ['🎈', '🎈', '🎈', '🎈', '🎈'];
+        let balloonsLeft = 10;
+
+        function createBalloons() {
+            for (let i = 0; i < 10; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.textContent = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                balloon.style.left = (i * 10 + 5) + '%';
+                balloon.style.bottom = Math.random() * 50 + 'px';
+                balloon.style.animationDelay = Math.random() * 2 + 's';
+                balloon.dataset.message = balloonMessages[i];
+                
+                balloon.addEventListener('click', function() {
+                    if (!this.classList.contains('popped')) {
+                        this.classList.add('popped');
+                        balloonsLeft--;
+                        balloonCountDiv.textContent = balloonsLeft;
+                        
+                        balloonMessageDiv.textContent = this.dataset.message;
+                        balloonMessageDiv.classList.add('show');
+                        
+                        setTimeout(() => {
+                            balloonMessageDiv.classList.remove('show');
+                        }, 3000);
+                        
+                        setTimeout(() => {
+                            this.style.display = 'none';
+                        }, 300);
+                    }
+                });
+                
+                balloonContainer.appendChild(balloon);
+            }
+        }
+
+        createBalloons();
+
+        // ============================================
+        // FORTUNE COOKIE
+        // ============================================
+        const fortuneMessages = [
+            "ভালোবাসা মানে কাউকে নিজের করে পাওয়া নয়, বরং তাকে তার মতো করে ভালো থাকতে দেখা।",
+            "কিছু মানুষ আকাশের নক্ষত্রের মতো, যারা দূর থেকেও আলো দিয়ে পথ দেখায়—আপনি আমার সেই ধ্রুবতারা।",
+            "হৃদয়ের সব কথা শব্দে বলা যায় না, কিছু কথা কেবল নীরবতায় অনুভব করতে হয়।",
+            "ফুলের যেমন সুবাস ছড়াতে কোনো কারণ লাগে না, আপনাকে ভালোবাসতেও আমার কোনো কারণ লাগে না।",
+            "পৃথিবীতে সবচেয়ে সুন্দর দৃশ্য হলো—প্রিয় মানুষটার মুখে লেগে থাকা নিশ্চিন্ত হাসি।",
+            "দূরত্ব কখনোই অনুভূতির গভীরতা কমাতে পারে না, বরং তা আরও পবিত্র করে তোলে।",
+            "আপনি আমার গল্পের সেই চরিত্র, যাকে আমি কখনো হারাইনি, আবার কখনো পুরোপুরি পাইনি।"
+        ];
+
+        const fortuneBtn = document.getElementById('fortuneBtn');
+        const fortuneMessageDiv = document.getElementById('fortuneMessage');
+
+        fortuneBtn.addEventListener('click', () => {
+            const randomMessage = fortuneMessages[Math.floor(Math.random() * fortuneMessages.length)];
+            fortuneMessageDiv.style.opacity = '0';
+            
+            setTimeout(() => {
+                fortuneMessageDiv.textContent = `"${randomMessage}"`;
+                fortuneMessageDiv.style.opacity = '1';
+            }, 300);
+        });
+
+        // ============================================
+        // EASTER EGGS (Hidden Secrets)
+        // ============================================
+        const easterEggMessages = [
+            "ছায়ার মতো সবসময় আপনার শুভকামনায় পাশে আছি।",
+            "আপনি কি জানেন? হাসলে আপনাকে পরীর মতো লাগে।",
+            "৫ বছর বা ৫০ বছর—অপেক্ষাটা আমার কাছে সুন্দর।",
+            "আমার ডায়েরির প্রতিটি পাতায় কেবল আপনার নাম।",
+            "শুধু ভালো থাকবেন, এটুকুই আমার চাওয়া।"
+        ];
+
+        for (let i = 1; i <= 5; i++) {
+            const egg = document.getElementById(`egg${i}`);
+            const tooltip = document.getElementById('eggTooltip');
+            
+            egg.addEventListener('click', (e) => {
+                tooltip.textContent = easterEggMessages[i - 1];
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.classList.add('show');
+                
+                setTimeout(() => {
+                    tooltip.classList.remove('show');
+                }, 3000);
+            });
+        }
+
+        // ============================================
+        // SCROLL REVEAL ANIMATIONS
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-title').forEach(title => {
+            observer.observe(title);
+        });
+
+        document.querySelectorAll('.reason-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // ============================================
+        // RESPONSIVE CANVAS RESIZE
+        // ============================================
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+        });
+
+        // ============================================
+        // CONSOLE MESSAGE (Easter Egg)
+        // ============================================
+        console.log('%c💝 শুভ জন্মদিন, তারুলতা! 💝', 'color: #D946A6; font-size: 24px; font-weight: bold;');
+        console.log('%cএই ওয়েবসাইটটি ভালোবাসা দিয়ে তৈরি করা হয়েছে ❤️', 'color: #9333EA; font-size: 14px;');
+    </script>
+</body>
+</html>
